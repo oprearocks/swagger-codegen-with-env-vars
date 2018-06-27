@@ -1,0 +1,16 @@
+{
+  "name": "swagger-codegen-with-env-vars",
+  "version": "1.0.0",
+  "main": "create-swagger-client.js",
+  "license": "MIT",
+  "dependencies": {
+    "cli": "^1.0.1",
+    "dotenv": "^6.0.0",
+    "js-yaml": "^3.12.0",
+    "shellsubstitute": "^1.2.0"
+  },
+  "description": "swagger-codegen wrapper with YAML-level environment variables",
+  "repository": "git@github.com:oprearocks/swagger-codegen-with-env-vars.git",
+  "author": "Adrian Oprea <adrian@oprea.rocks>",
+  "private": false
+}

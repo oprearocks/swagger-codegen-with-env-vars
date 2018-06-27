@@ -1,0 +1,57 @@
+---
+swagger: "2.0"
+info:
+  description: API for subscribing a new user to the newsletter
+  version: 1.0.0
+  title: Oprea.Rocks Newsletter
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: adrian@oprea.rocks
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+host: ${HOSTNAME}
+basePath: ${BASE_PATH}
+schemes:
+  - http
+paths:
+  /signup:
+    post:
+      tags:
+        - signup
+      summary: "Add a user (email) to the weekly newsletter."
+      description: >
+        A request to this endpoint will either add a new email to the newsletter database or it
+        will update an existing entry.
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: body
+        name: body
+        description: Object required to add a new entry into the newsletter subscriptions list
+        required: true
+        schema:
+          type: object
+          required:
+          - email
+          - fullName
+          properties:
+            email:
+              type: string
+              example: you@example.com
+            fullName:
+              type: string
+              example: John Dough
+          title: Sign-up Information
+          description: >
+            Required information to add a new entry into the newsletter subscription list or
+            update an existing entry
+          xml:
+            name: Registration
+      responses:
+        200:
+          description: Successful operation
+        400:
+          description: Required data is missing from the payload
